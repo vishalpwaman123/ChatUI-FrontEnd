@@ -45,18 +45,34 @@
       flex-direction: row;
       flex-wrap: wrap;
       height: 30px;
+      font-size: 5px;
       width: fit-content;
       background-color: #292929;
       border-radius: 10px;
-     color: white;
+      color: white;
+      margin: 5px 5px 5px 5px;
+
+     .chat__Menu{
+
+      color: white;
+      display: flex;
+      border-radius: 10px;
+      margin: 0 0 0 0;
+      justify-content: center;
+      align-items: center;
+
+      .MuiButton-label {
+        width: 100%;
+        display: inherit;
+        align-items: inherit;
+        justify-content: inherit;
+        font-size: 10px;
+    }
+
+    .MuiButton-text {
+      //  padding: 6px 8px; 
   }
+  
+    }
+    }
 
-  .chat__Menu{
-
-    // color: white;
-    // display: flex;
-    // border-radius: 10px;
-    margin: 0 0 0 10px;
-    justify-content: center;
-
-  }

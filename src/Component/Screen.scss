@@ -75,17 +75,6 @@
         // overflow: hidden;
         // overflow:scroll;
 
-        .mainContainer_ButtonBody{
-            display: flex;
-            .mainContainer_ButtonBody_Menu{
-                display: flex;
-                width: 100%;
-                .chat__MenuOption{
-
-                }
-            }
-        }
-
     }
 
     .mainContainer_ButtonBody{
@@ -93,15 +82,40 @@
         display: flex;
         align-items: center;
         .mainContainer_ButtonBody_Back{
-            width: 75px;
-            height: 30px;
+            width: 20%;
+
+        .mainContainer_ButtonBody_BackButton{
+            width: 60px;
+            height: 80%;
             background-color: #292929;
             color: white;
             display: flex;
             border-radius: 10px;
-            margin: 0 0 0 10px;
+            margin: 0 0 0 0;
             justify-content: center;
+            align-items: center;
 
+            .MuiButton-label {
+                width: 100%;
+                display: inherit;
+                align-items: inherit;
+                justify-content: inherit;
+                font-size: 10px;
+            }
+
+        }
+    }
+
+        .mainContainer_ButtonBody_OptionMenu{
+            display: flex;
+            width: 80%;
+            height: 100%;
+            .chat__MenuOption{
+                display: flex;
+                // padding: 5px 5px 10px 10px;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
@@ -156,4 +170,5 @@
         }
     }
 }
+
 

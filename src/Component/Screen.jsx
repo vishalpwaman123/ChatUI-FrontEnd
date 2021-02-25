@@ -18,7 +18,20 @@ import ChatMenuOption from '../Component/ChatMenuOption'
 
 export default class Screen extends React.Component {
 
-    chatItms = [
+    messagesEndReference = React.createRef(null);
+ 
+      constructor(props) {
+        super(props);
+        this.state = {
+          chat: this.chatItms,
+          Chatmenu : this.ChatMenuButton,
+          msg: "",
+          min : 9,
+          Max : 100000000,
+        };
+      }
+
+      chatItms = [
         {
           key: 1,
           type: "",
@@ -56,7 +69,7 @@ export default class Screen extends React.Component {
         },
       ];
 
-    ChatMenuButton = [
+      ChatMenuButton = [
         {   
             key: 1,
             type: "Fusion Tops"
@@ -70,15 +83,34 @@ export default class Screen extends React.Component {
             type: "Ethnic"
         },
     ];
- 
-      constructor(props) {
-        super(props);
-        this.state = {
-          chat: this.chatItms,
-          Chatmenu : this.ChatMenuButton,
-        //   msg: "",
-        };
+
+      scrollToBottom = () => {
+          this.messagesEndReference.current.scrollIntoView({ behavior: "smooth" });
       }
+
+      componentDidMount() {
+          console.log("Track 1");
+          window.addEventListener("keydown",(event) => {
+              if(event.keyCode === 13){
+                  console.log("Track 2",event.keyCode);
+                    if (this.state.msg !== "") {
+                        this.chatItms.push({
+                            key: this.state.min + Math.random() * (this.state.max - this.state.min),
+                            type: "",
+                            msg: this.state.msg,
+                        });
+                        this.setState({ chat: [...this.chatItms]});
+                        this.scrollToBottom();
+                        this.setState({ msg: ""});
+                    }
+              }
+          });
+          this.scrollToBottom();
+      }
+
+      onStateChange = (event) => {
+          this.setState({ msg: event.target.value});
+      };
 
     render() {
         return (
@@ -111,18 +143,22 @@ export default class Screen extends React.Component {
                                 {this.state.chat.map((itm, index) => {
                                     return (
                                         <ChatItem
-                                            key={itm.key}
+                                            key= {itm.key}
                                             user={itm.type ? itm.type : "me"}
                                             msg={itm.msg}
                                         />
                                     );
                                 })}
+                                <div ref={this.messagesEndReference}></div>
                             </div>
                         </div>
                         <div className="mainContainer_ButtonBody">
-                            <Button className="mainContainer_ButtonBody_Back"><ArrowLeftIcon fontSize="small"/>Back</Button>
-                            <div className="mainContainer_ButtonBody_Menu">
-                            {/* <div className="chat__MenuOption">
+                            <div className="mainContainer_ButtonBody_Back">
+                            <Button className="mainContainer_ButtonBody_BackButton"><ArrowLeftIcon fontSize="small"/>Back</Button>
+                            </div>
+                            <div className="mainContainer_ButtonBody_OptionMenu" >
+                                
+                            <div className="chat__MenuOption">
                                 {this.state.Chatmenu.map((itm) => {
                                     return (
                                         <ChatMenuOption
@@ -131,7 +167,7 @@ export default class Screen extends React.Component {
                                         />
                                     );
                                 })}
-                            </div> */}
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -146,6 +182,8 @@ export default class Screen extends React.Component {
                                         id="outlined-adornment-weight"
                                         style={{ color: 'lightgray' }}
                                         placeholder="How can i help you?"
+                                        onChange={this.onStateChange}
+                                        value={this.state.msg}
                                         className="InputField"
                                         endAdornment={
                                             <InputAdornment position="end">
