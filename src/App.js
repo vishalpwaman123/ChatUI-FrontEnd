@@ -1,4 +1,5 @@
-import Screen from './Component/Screen';
+import Screen from './Component/MainScreen/Screen'
+import MyOrders from './Component/Menu/MyOrders.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -8,6 +9,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Screen} />
+          <Route exact path="/MyOrders" component={MyOrders} />
         </Switch>
       </Router>
     </div>

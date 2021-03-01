@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
-import '../Component/ChatContent.scss'
+import '../../Style/ChatContent/ChatContent.scss'
 
 export default class ChatMenuOption extends Component {
     constructor(props) {

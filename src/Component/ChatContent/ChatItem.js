@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../Component/ChatContent.scss'
+import '../../Style/ChatContent/ChatContent.scss'
 
 export default class ChatItem extends Component {
   constructor(props) {
