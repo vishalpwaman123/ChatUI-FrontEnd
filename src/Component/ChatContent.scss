@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 15px;
-    margin-right: 5px;
+    margin-right: 0px;
   }
 
   .chat__item__content {
@@ -68,10 +68,6 @@
         justify-content: inherit;
         font-size: 10px;
     }
-
-    .MuiButton-text {
-      //  padding: 6px 8px; 
-  }
   
     }
     }
