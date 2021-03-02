@@ -110,12 +110,11 @@
 
         .mainContainer_ButtonBody_OptionMenu{
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             width: 80%;
             height: 100%;
             .chat__MenuOption{
                 display: flex;
-                // padding: 5px 5px 10px 10px;
                 justify-content: center;
                 align-items: center;
             }
