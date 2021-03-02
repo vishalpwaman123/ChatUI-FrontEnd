@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
 import '../../Style/ChatContent/ChatContent.scss'
 
-export default class ChatMenuOption extends Component {
+export default class ChatMenuButton extends Component {
     constructor(props) {
         super(props);
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatMenuOption from '../ChatContent/ChatMenuOption'
+import ChatMenuOption from '../ChatContent/ChatMenuButton'
 import ChatItem from '../ChatContent/ChatItem'
 import '../../Style/ChatContent/ChatContent.scss'
 import '../../Style/MainScreen/Screen.scss'
@@ -121,7 +121,7 @@ export default class Screen extends React.Component {
                     <div className="mainContainer">
                         <div className="content__body">
                             <div className="chat__items">
-                                {this.state.chat.map((itm, index) => {
+                                {this.state.chat.map((itm) => {
                                     return (
                                         <ChatItem
                                             key={itm.key}

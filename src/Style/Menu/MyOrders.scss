@@ -1,3 +1,23 @@
+.flex_Direction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.flex_Direction1{
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    color: white;
+}
+
+.flex_Direction2{
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+}
+
 .Container{
     height: 100%;
     display: flex;
@@ -5,14 +25,246 @@
 }
 
 .MainContainer{
-    border: 1px solid lightgray;
+    // border: 1px solid lightgray;
     height: 610px;
     width: 400px;
 
-    .HeaderContainer{
+    .MyOrder_Container{
+        height: 250px;
         width: 100%;
-        height: 15%;
+        // border: 1px solid white;
         box-sizing: border-box;
         background-color: #3A3A3A;
+
+        .MyOrder_Header{
+            height: 25%;
+            // border: 1px solid white;
+            border-bottom: 2px solid black;
+            box-sizing: border-box;
+            display: flex;
+
+            .MyOrder_Header_dateTime{
+                width:34% ;
+                height: 100%;
+                border: 1px solid white;
+                box-sizing: border-box;
+
+                .MyOrder_Header_dateTime_Header{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    // color: white;
+                    font-size: 12px;
+                    @extend .flex_Direction;
+                    box-sizing: border-box;
+                }
+
+                .MyOrder_Header_dateTime_CurrentTime{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    // color: white;
+                    font-size: 14px; 
+                    @extend .flex_Direction;
+                    box-sizing: border-box;
+                }
+
+            }
+
+            .MyOrder_Header_Count{
+                width:33% ;
+                height: 100%;
+                // border: 1px solid white;
+                box-sizing: border-box;
+
+                .MyOrder_Header_Count_Header{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    // color: white;
+                    font-size: 12px;
+                    @extend .flex_Direction;
+                    box-sizing: border-box;
+                }
+
+                .MyOrder_Header_Count_CurrentCount{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    @extend .flex_Direction;
+                }
+
+            }
+
+            .MyOrder_Header_Amount{
+                width:34% ;
+                height: 100%;
+                // border: 1px solid white;
+                box-sizing: border-box;
+
+                .MyOrder_Header_Amount_Header{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    @extend .flex_Direction;
+                    font-size: 12px;
+                }
+
+                .MyOrder_Header_Amount_CurrentAmount{
+                    width: 100%;
+                    height: 50%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    @extend .flex_Direction;
+                }
+            }
+
+        }
+
+        .MyOrder_MainContainer{
+            height: 40%;
+            // border: 1px solid white;
+            box-sizing: border-box;
+            display: flex;
+
+            .MyOrder_MainContainer_Image{
+                width: 31%;
+                height: 100%;
+                // border: 1px solid white;
+                box-sizing: border-box;
+                @extend .flex_Direction;
+
+                .MyOrder_MainContainer_Image_I{
+                    border-radius: 5px;
+                    @extend .flex_Direction;
+                }
+            }
+
+            .MyOrder_MainContainer_Detailed{
+                width: 70%;
+                height: 100%;
+                // border: 1px solid white;
+                box-sizing: border-box;
+                // @extend .flex_Direction;
+                // color: white;
+
+                .MyOrder_MainContainer_Detailed_Header{
+                    width: 100%;
+                    height: 40%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    @extend .flex_Direction1;
+                }
+
+                .MyOrder_MainContainer_Detailed_SizeColor{
+                    width: 100%;
+                    height: 30%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    display: flex;
+
+                    .MyOrder_MainContainer_Detailed_SizeColor_Size{
+                        width: 40%;
+                        height: 100%;
+                        // border: 1px solid white;
+                        box-sizing: border-box;
+                        @extend .flex_Direction1;
+                        font-size: 14px;
+                    }
+
+                    .MyOrder_MainContainer_Detailed_SizeColor_Color{
+                        width: 62%;
+                        height: 100%;
+                        // border: 1px solid white;
+                        @extend .flex_Direction1;
+                        font-size: 14px;
+                        box-sizing: border-box;
+                    }
+                }
+
+                .MyOrder_MainContainer_Detailed_Price{
+                    width: 100%;
+                    height: 30%;
+                    // border: 1px solid white;
+                    box-sizing: border-box;
+                    display: flex;
+
+                    .MyOrder_MainContainer_Detailed_Price_Header{
+                        width: 20%;
+                        height: 100%;
+                        // color: white;
+                        // border: 1px solid white;
+                        @extend .flex_Direction2;
+                        
+                    }
+
+                    .MyOrder_MainContainer_Detailed_Price_SalePrice{
+                        width: 42%;
+                        height: 100%;
+                        @extend .flex_Direction2;
+                        // border: 1px solid white;
+                    }
+
+                    .MyOrder_MainContainer_Detailed_Price_RealPrice{
+                        width: 40%;
+                        height: 100%;
+                        @extend .flex_Direction2;
+                        text-decoration: line-through;
+                        // border: 1px solid white;
+                    }
+
+                }
+            }
+
+        }
+
+        .MyOrder_MenuButton{
+            height: 18%;
+            // border: 1px solid white;
+            box-sizing: border-box;
+            display: flex;
+
+            .MyOrder_MenuButton_Exchange{
+                height: 100%;
+                width: 50%;
+                // border: 1px solid white;
+                @extend .flex_Direction;
+
+                .MyOrder_MenuButton_Exchange_B{
+                    width: 80%;
+                    height: 50%;
+                    background-color: white;
+                    // @extend .flex_Direction;
+                }
+            }
+
+            .MyOrder_MenuButton_Return{
+                height: 100%;
+                width: 50%;
+                // border: 1px solid white;
+                // box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .MyOrder_MenuButton_Return_B{
+                    width: 80%;
+                    height: 50%;
+                    background-color: white;   
+                }
+            }
+
+        }
+
+        .MyOrder_Rating{
+
+            height: 18%;
+            // border: 1px solid white;
+            // box-sizing: border-box;
+            // @extend .flex_Direction;
+            
+        }
     }
 }
